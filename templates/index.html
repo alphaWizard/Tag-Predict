@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tags Finder</title>
+  <script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9:all.js"></script>
+  
+  
+      <link rel="stylesheet" href="static/css/style.css">
+
+  
+</head>
+
+<body>
+
+  <h1>
+  Tag Finder
+</h1>
+
+<div>
+  <form action="/query" method="post">
+    <input type="text" name="query" class="formStyle" required />
+    <input type="submit" class="formButton" name="submit" value="Search!" />
+    <!-- <a href="#" class="formButton">Subscribe</a> -->
+  </form>
+</div>
+<!-- <br>
+<br> -->
+
+
+<!--  {% if message %}
+    <p align="center">{{ message }}</p>
+    {% endif %} -->
+
+    {% if message %}
+    <div id="skills">
+	<h1 class="heading">Predicted Tags</h1>
+	<ul>
+	{% for label in message %}
+		<li>{{ label }}</li>
+	{% endfor %}	
+	</ul>
+	</div>
+    {% else %}
+    <div id="skills">
+    	<h1 class="heading">No Predicted Tags</h1>
+    </div>
+
+   {% endif %} 	
+
+  
+  
+
+</body>
+
+</html>
